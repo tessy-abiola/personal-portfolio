@@ -65,6 +65,11 @@ body {
   align-items: center;
   gap: 1.2rem;
 }
+.nav-links :hover{
+  letter-spacing: 1px;
+  transition: 0.7s;
+}
+
 
 .header a {
   text-decoration: none;
@@ -149,6 +154,7 @@ body {
 .social-icons {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -157,8 +163,11 @@ body {
 .contact {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-
+#contact{
+padding-left: 10px;
+}
 .contact-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
