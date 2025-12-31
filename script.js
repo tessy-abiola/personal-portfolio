@@ -16,18 +16,26 @@ if (savedTheme === "dark") {
   themeToggle.textContent = "☀️";
 }
 
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
 // Toggle theme on click
 themeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark");
 
   if (body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-    themeToggle.textContent = "☀️";
+    body.classList.remove("dark");
+    body.classList.add("light");
   } else {
-    localStorage.setItem("theme", "light");
-    themeToggle.textContent = "🌙";
+    body.classList.remove("light");
+    body.classList.add("dark");
   }
 });
+
 
 /* --------- Footer Year --------- */
 

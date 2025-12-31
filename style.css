@@ -11,6 +11,9 @@
   --border: rgba(0, 0, 0, 0.08);
   --radius: 14px;
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --icon-color : #000000;
+  --link-color: #6a0dad;
+  --bg-color: #ffffff;
 }
 
 body.dark {
@@ -19,6 +22,9 @@ body.dark {
   --text: #e5e7eb;
   --muted: #94a3b8;
   --border: rgba(255, 255, 255, 0.1);
+  --icon-color: #7dd3fc;
+  --link-color: #ffffff;
+  --bg-color: #0f172a;
 }
 
 /* Reset */
@@ -51,6 +57,62 @@ body {
   z-index: 10;
 }
 
+/* THEMES */
+body.dark {
+  color: white;
+}
+
+body.light {
+color: black;
+}
+
+.nav-links,
+.nav-links a,
+.nav-links li,
+.theme-toggle {
+  color: inherit !important; 
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.theme-toggle{
+  list-style: none;
+  position: absolute;
+}
+.hamburger{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: currentColor;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.nav-links.active{
+  display: block;
+}
+/* Hamburger animation*/
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px);
+}
+.hamburger .active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger .active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+ }
+
+
 .header nav {
   max-width: 1100px;
   margin: auto;
@@ -61,15 +123,28 @@ body {
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  display: none;
+  position: absolute;
+  top:60px;
+  right: 10px;
+  width: 200px;
+  padding: 1rem;
+  z-index: 999;
+  background: inherit;
 }
-.nav-links :hover{
+.nav-links a:hover{
   letter-spacing: 1px;
   transition: 0.7s;
+  color: #4753ff;
 }
 
+.nav-links li a{
+ text-decoration: none;
+ color: white;
+ font-size: 1.2rem;
+ display: block;
+ transition: color 0.3s;
+}
 
 .header a {
   text-decoration: none;
@@ -156,8 +231,24 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  
 }
 
+
+.social-link{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+text-decoration: underline;
+color: var(--link-color);
+}
+
+.social-link svg{
+  width: 60px;
+  height: 60px;
+  fill: var(--icon-color);
+}
 /* Contact */
 
 .contact {
@@ -186,11 +277,4 @@ footer {
   color: var(--muted);
 }
 
-/* Responsive */
 
-@media (max-width: 768px) {
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
