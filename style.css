@@ -75,9 +75,12 @@ color: black;
   cursor: pointer;
 }
 
-.theme-toggle{
+.theme-toggle-btn{
   list-style: none;
   position: absolute;
+  cursor: pointer;
+  background-color: var(--accent);
+  border: none;
 }
 .hamburger{
   display: flex;
@@ -98,7 +101,7 @@ color: black;
 }
 
 .nav-links.active{
-  display: block;
+  display: flex;
 }
 /* Hamburger animation*/
 
@@ -124,13 +127,14 @@ color: black;
 
 .nav-links {
   display: none;
+  flex-direction: column;
   position: absolute;
   top:60px;
   right: 10px;
-  width: 200px;
   padding: 1rem;
+  background-color: var(--accent);
+  border-radius: 10px;
   z-index: 999;
-  background: inherit;
 }
 .nav-links a:hover{
   letter-spacing: 1px;
@@ -277,4 +281,35 @@ footer {
   color: var(--muted);
 }
 
+@media (min-width: 768px) {
+
+  .nav-links {
+    display: flex;          
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    background: none;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .nav-links.active {
+    display: flex;            
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+  margin-left: 0.5rem; 
+  border: none;
+  background: none;      
+  border: none;           
+  color: inherit;         
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;   
+  }
+}
 
