@@ -235,9 +235,11 @@ color: black;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  
 }
 
+.social-icons li {
+  list-style: none;  
+}
 
 .social-link{
 display: flex;
@@ -259,9 +261,12 @@ color: var(--link-color);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;  
+  padding: 0 1rem;
 }
 #contact{
-padding-left: 10px;
+padding-left: 0;
+padding-right: 0;
 }
 .contact-card {
   background: var(--card-bg);
@@ -269,6 +274,9 @@ padding-left: 10px;
   padding: 1.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  width: 100%;       
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 /* Footer */
@@ -312,4 +320,13 @@ footer {
   padding: 0;   
   }
 }
+
+@media (max-width: 360px) {
+  .contact-card {
+    padding: 1rem;
+    max-width: 90vw; /* always fits tiny screens */
+  }
+}
+/* ===============================
+   End of Style Sheet
 
