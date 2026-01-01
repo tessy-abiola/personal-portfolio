@@ -261,9 +261,8 @@ color: var(--link-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;  
-  padding: 0 1rem;
 }
+
 #contact{
 padding-left: 0;
 padding-right: 0;
@@ -325,6 +324,11 @@ footer {
   .contact-card {
     padding: 1rem;
     max-width: 90vw; /* always fits tiny screens */
+  }
+
+  .contact{
+     flex-direction: column;  
+  padding: 0 1rem;
   }
 }
 /* ===============================
